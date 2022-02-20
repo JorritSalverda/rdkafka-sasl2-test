@@ -24,9 +24,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - run: sudo apt-get install -y libssl-dev
-      - run: sudo apt-get install -y pkg-config musl-tools musl-dev liblz4-dev libsasl2-dev
-        if: matrix.target == 'x86_64-unknown-linux-musl'
+      - run: sudo apt-get install -y build-essential musl-dev musl-tools libssl-dev linux-musl-dev linux-libc-dev zlib1g-dev pkg-config
       - run: rustup target add ${{ matrix.target }}
       - run: openssl version
       - run: cargo version
