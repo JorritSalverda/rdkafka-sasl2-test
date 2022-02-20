@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - run: sudo apt-get install -y libssl-dev
+      - run: sudo apt-get install -y musl-tools libssl-dev
       - run: rustup target add x86_64-unknown-linux-musl
       - run: openssl version
       - run: cargo version
