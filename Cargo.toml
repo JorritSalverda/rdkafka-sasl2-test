@@ -7,9 +7,7 @@ edition = "2021"
 
 [dependencies]
 openssl-probe = "0.1.5"
-openssl = { version = "0.10.38", features = ["vendored"] }
-openssl-sys = "0.9.72"
-rdkafka = { version = "0.28.0", features = ["cmake-build"] }
+rdkafka = { version = "0.28.0", features = ["ssl-vendored", "gssapi-vendored", "libz-static", "cmake-build"] }
 
 [[bin]]
 name = "bootstrap"
